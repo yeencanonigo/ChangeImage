@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image and Background Change</title>
+<style>
+    body {
+        background-color: #fff; 
+    }
+
+    .container {
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    #image {
+        width: 400px;
+        height: 400px;
+    }
+
+    #changeButton {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+    }
+
+    
+</style>
+</head>
+<body>
+
+<div class="container">
+    <img id="image" src="http://clipart-library.com/images_k/happy-emoji-transparent/happy-emoji-transparent-3.png" alt="Smiley Icon">
+    <br>
+    <button id="changeButton" onclick="changeImage()">Change</button>
+</div>
+
+<script>
+    function changeImage() {
+        var image = document.getElementById('image');
+        var currentImage = image.src;
+
+        if (currentImage.endsWith('http://clipart-library.com/images_k/happy-emoji-transparent/happy-emoji-transparent-3.png')) {
+            image.src = 'https://cdn.shopify.com/s/files/1/1061/1924/files/Emoji_Icon_-_Sad_Emoji.png?11214052019865124406';
+            document.body.style.backgroundColor = '#ffcccc'; 
+        } else {
+            image.src = 'http://clipart-library.com/images_k/happy-emoji-transparent/happy-emoji-transparent-3.png';
+            document.body.style.backgroundColor = '#fff';
+        }
+    }
+</script>
+
+</body>
+</html>
